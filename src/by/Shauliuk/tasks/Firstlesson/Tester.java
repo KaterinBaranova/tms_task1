@@ -1,4 +1,4 @@
-package by.Shauliuk.tasks;
+package by.Shauliuk.tasks.Firstlesson;
 
 public class Tester {
     public static void testByte() {

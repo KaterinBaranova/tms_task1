@@ -1,4 +1,4 @@
-package by.Shauliuk.tasks;
+package by.Shauliuk.tasks.secondlesson;
 
 public class Tasks {
     public static void main(String[] args) {

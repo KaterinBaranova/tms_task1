@@ -1,4 +1,4 @@
-package by.Shauliuk.tasks;
+package by.Shauliuk.tasks.Homework;
 
 import java.util.Scanner;
 

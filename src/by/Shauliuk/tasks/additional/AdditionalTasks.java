@@ -1,8 +1,8 @@
-package by.Shauliuk.tasks;
+package by.Shauliuk.tasks.additional;
 
 import java.util.Scanner;
 
-public class Additional_tasks {
+public class AdditionalTasks {
     public static void main(String[] args) {
 
         int input = 1234567; // Написать программу, которая переворачивает положительное семизначное число
