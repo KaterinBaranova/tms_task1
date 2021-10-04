@@ -1,32 +1,32 @@
 package by.Shauliuk.tasks.HomeworkOOP;
 
-public class Transport {
+public abstract class Transport {
 
-    public int Power;
-    public double MaximumSpeed;
-    public int Weight;
-    public String Brand;
+    protected int power;
+    protected double maximumSpeed;
+    protected int weight;
+    protected String brand;
 
     public Transport(int power, double maximumSpeed, int weight, String brand) {
-        this.Power = power;
-        this.MaximumSpeed = maximumSpeed;
-        this.Weight = weight;
-        this.Brand = brand;
+        this.power = power;
+        this.maximumSpeed = maximumSpeed;
+        this.weight = weight;
+        this.brand = brand;
     }
 
     public int getPower() {
-        return Power;
+        return power;
     }
 
     public double getMaximumSpeed() {
-        return MaximumSpeed;
+        return maximumSpeed;
     }
 
     public int getWeight() {
-        return Weight;
+        return weight;
     }
 
     public String getBrand() {
-        return Brand;
+        return brand;
     }
 }

@@ -1,9 +1,9 @@
 package by.Shauliuk.tasks.HomeworkOOP;
 
-public class GroundTransport extends Transport {
+public abstract class GroundTransport extends Transport {
 
-    public int NumberOfWheels;
-    double FuelConsumption;
+    public int numberOfWheels;
+    double fuelConsumption;
 
 
     public GroundTransport(int power, double maximumSpeed, int weight, String brand, int numberOfWheels,

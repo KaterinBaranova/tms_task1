@@ -4,57 +4,55 @@ import java.util.Scanner;
 
 public class Military extends Air {
 
-    private boolean BailoutSystem;
-    private int NumberOfMissilesOnBoard;
+    private boolean bailoutSystem;
+    private int numberOfMissilesOnBoard;
 
 
-    public Military(int power, double maximumSpeed, int weight, String brand,
-                    int wingspan, int minimumRunwayLengthForTakeOff, boolean bailoutSystem, int numberOfMissilesOnBoard) {
+    public Military(int power, double maximumSpeed, int weight, String brand, int wingspan,
+                    int minimumRunwayLengthForTakeOff, boolean bailoutSystem, int numberOfMissilesOnBoard) {
         super(power, maximumSpeed, weight, brand, wingspan, minimumRunwayLengthForTakeOff);
+        this.bailoutSystem = bailoutSystem;
+        this.numberOfMissilesOnBoard = numberOfMissilesOnBoard;
     }
 
-    public void Transport(int power, double maximumSpeed, int weight, String brand) {
-        this.Power = 900;
-        this.MaximumSpeed = 7000;
-        this.Weight = 10000;
-        this.Brand = "Scania";
-        this.Wingspan = 756;
-        this.MinimumRunwayLengthForTakeOff = 396;
 
-        System.out.println("Passenger airplane with the following characteristics:" + power + "in horse power" +
-                maximumSpeed + " km/hour maximum Speed" + weight + " kg weight " + brand + "brand" +
-                Wingspan + "m Wingspan" + MinimumRunwayLengthForTakeOff + "Minimum runway length for take-off");
+    public String displayInfo4() {
+        System.out.println(" 4) Military airplane with the following characteristics: " + power + "in horse power, " +
+                maximumSpeed + " km/hour maximum Speed, " + weight + " kg weight " + brand + " brand, "
+                + wingspan + " m Wingspan " + minimumRunwayLengthForTakeOff + " Minimum runway length for take-off ");
+        return null;
+    }
 
-        double calculatePowerInKilowatts;
 
+    double calculateKilowatts() {
         double kilowatts = power * 0.74;
-        System.out.println("Power in kilowatts " + kilowatts);
+        return kilowatts;
     }
 
     public boolean getBailoutSystem() {
-        return BailoutSystem;
+        return bailoutSystem;
     }
 
-    public void setBailoutSystem(boolean CarryingCapacity) {
-        this.BailoutSystem = true;
-        if (BailoutSystem == true) {
-            System.out.println("The bailout was successful");
-        } else {
-            System.out.println("You don't have such a system");
-        }
+    public void setBailoutSystem(boolean bailoutSystem) {
+        this.bailoutSystem = true;
     }
 
     public int getNumberOfMissilesOnBoard() {
-        return NumberOfMissilesOnBoard;
+        return numberOfMissilesOnBoard;
     }
 
-    public void setNumberOfMissilesOnBoard(int CarryingCapacity) {
-        this.NumberOfMissilesOnBoard = 70;
+    public void setNumberOfMissilesOnBoard(int numberOfMissilesOnBoard) {
+        this.numberOfMissilesOnBoard = 70;
+    }
+
+    public String MissilesOnBoard() {
+        System.out.println("Number of missiles on board " + numberOfMissilesOnBoard);
+        return null;
     }
 
     Scanner scan3 = new Scanner(System.in);
 
-    {
+    public int rocketAmount() {
         System.out.println("Enter rocket amount: ");
         int rocket = scan3.nextInt();
         if (rocket == 0)
@@ -62,9 +60,17 @@ public class Military extends Air {
         else {
             System.out.println("Rocket gone");
         }
-        {
-            System.out.println("Number of missilesOnBoard " + NumberOfMissilesOnBoard + "There is an bailout System");
-        }
 
+
+        return rocket;
+    }
+
+    public boolean bailoutSystem() {
+        if (bailoutSystem == true)
+            System.out.println("The bailout was successful");
+        else {
+            System.out.println("You don't have such a system");
+        }
+        return false;
     }
 }

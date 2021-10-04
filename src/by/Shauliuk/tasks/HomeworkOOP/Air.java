@@ -1,9 +1,9 @@
 package by.Shauliuk.tasks.HomeworkOOP;
 
-public class Air extends Transport {
+public abstract class Air extends Transport {
 
-    int Wingspan;
-    int MinimumRunwayLengthForTakeOff;
+    int wingspan;
+    int minimumRunwayLengthForTakeOff;
 
 
     public Air(int power, double maximumSpeed, int weight, String brand, int wingspan, int minimumRunwayLengthForTakeOff) {

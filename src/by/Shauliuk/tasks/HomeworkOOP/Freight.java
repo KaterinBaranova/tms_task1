@@ -6,47 +6,44 @@ import java.util.Scanner;
 public class Freight extends GroundTransport {
 
 
-    private int CarryingCapacity;
+    protected int carryingCapacity;
 
-
-    public Freight(int power, double maximumSpeed, int weight, String brand,
-                   int numberOfWheels, double fuelConsumption, int carryingCapacity) {
+    public Freight(int power, double maximumSpeed, int weight, String brand, int numberOfWheels,
+                   double fuelConsumption, int carryingCapacity) {
         super(power, maximumSpeed, weight, brand, numberOfWheels, fuelConsumption);
+        this.carryingCapacity = carryingCapacity;
     }
 
-    public void Transport(int power, double maximumSpeed, int weight, String brand) {
-        this.Power = 40;
-        this.MaximumSpeed = 220;
-        this.Weight = 1500;
-        this.Brand = "MAZ";
-        this.NumberOfWheels = 8;
-        this.FuelConsumption = 15.2;
+    public String displayInfo2() {
+        System.out.println(" 2) Freight car with the following characteristics: " + power + " in horse power " +
+                +maximumSpeed + " km/hour maximum Speed " + weight + " kg weight " + brand +
+                " brand " + "Number of wheels " + numberOfWheels + " Fuel consumption " + fuelConsumption);
+        return null;
+    }
 
-        System.out.println("Passenger car with the following characteristics:" + power + "in horse power" +
-                maximumSpeed + " km/hour maximum Speed" + weight + " kg weight " + brand + "brand" +
-                "Number of wheels" + NumberOfWheels + "Fuel consumption" + FuelConsumption);
-
-        double calculatePowerInKilowatts;
-
+    double calculateKilowatts() {
         double kilowatts = power * 0.74;
-        System.out.println("Power in kilowatts " + kilowatts);
+        return kilowatts;
     }
 
     public int getCarryingCapacity() {
-        return CarryingCapacity;
+        return carryingCapacity;
     }
 
     public void setCarryingCapacity(int CarryingCapacity) {
-        this.CarryingCapacity = 80000;
+        this.carryingCapacity = 80000;
     }
 
-    public void passengerCar() {
-        System.out.println("Carrying capacity " + CarryingCapacity + "T");
+    public String carryingCapacity() {
+        System.out.println("Carrying capacity " + carryingCapacity + "T");
+        return null;
     }
+
 
     Scanner scan4 = new Scanner(System.in);
 
-    {
+    public String cargoAmount() {
+
         System.out.println("Enter cargo: ");
         int cargo = scan4.nextInt();
         if (cargo > 200)
@@ -54,6 +51,7 @@ public class Freight extends GroundTransport {
         else {
             System.out.println("Truck is filled with cargo");
         }
+        return null;
     }
 }
 

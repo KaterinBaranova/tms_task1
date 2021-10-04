@@ -5,72 +5,71 @@ import java.util.Scanner;
 
 public class Passenger extends GroundTransport {
 
-    private String BodyType;
-    private int NumberOfPassengers;
+    private String bodyType;
+    private int numberOfPassengers;
 
 
-    public Passenger(int power, double maximumSpeed, int weight, String brand,
-                     int numberOfWheels, double fuelConsumption, String bodyType, int numberOfPassengers) {
+    public Passenger(int power, double maximumSpeed, int weight, String brand, int numberOfWheels,
+                     double fuelConsumption, String bodyType, int numberOfPassengers) {
         super(power, maximumSpeed, weight, brand, numberOfWheels, fuelConsumption);
+        this.bodyType = bodyType;
+        this.numberOfPassengers = numberOfPassengers;
     }
 
-    public void GroundTransport(int power, double maximumSpeed, int weight, String brand, int numberOfWheels, double fuelConsumption) {
-        this.Power = 15;
-        this.MaximumSpeed = 120;
-        this.Weight = 300;
-        this.Brand = "Opel";
-        this.NumberOfWheels = 4;
-        this.FuelConsumption = 10.6;
+    public String displayInfo() {
 
-        System.out.println("Passenger car with the following characteristics:" + power + "in horse power" +
-                +maximumSpeed + " km/hour maximum Speed" + weight + " kg weight " + brand +
-                "brand" + "Number of wheels" + NumberOfWheels + "Fuel consumption" + FuelConsumption);
-
-        double calculatePowerInKilowatts;
-
-        double kilowatts = power * 0.74;
-        System.out.println("Power in kilowatts " + kilowatts);
-
+        System.out.println(" 1) Passenger car with the following characteristics: " + power + " in horse power, " +
+                +maximumSpeed + " km/hour maximum Speed, " + weight + " kg weight, " + brand +
+                " brand " + " Number of wheels " + numberOfWheels + " ,Fuel consumption " + fuelConsumption);
+        return null;
     }
 
     public String getBodyType() {
-        return BodyType;
+        return bodyType;
+    }
+
+    public void setBodyType(String bodyType) {
+        this.bodyType = "Hatchback";
     }
 
     public int getNumberOfPassengers() {
-        return NumberOfPassengers;
+        return numberOfPassengers;
     }
 
-    public void setBodyType(String BodyType) {
-        this.BodyType = "Hatchback";
+    public void setNumberOfPassengers() {
+        this.numberOfPassengers = 5;
     }
 
-    public void setNumberOfPassengers(int numberOfPassengers) {
-        this.NumberOfPassengers = 5;
+    public String passengerCar() {
+        System.out.println("Body type " + bodyType + " Number of passengers " + numberOfPassengers);
+        return null;
     }
 
-    public void passengerCar() {
-        System.out.println("Body type " + BodyType + "Number of passengers " + NumberOfPassengers);
+
+    public double calculateKilowatts() {
+        double kilowatts = power * 0.74;
+        return kilowatts;
+    }
+
+
+    Scanner scan1 = new Scanner(System.in);
+
+    public double calculateConsumedFuel() {
+        System.out.print("Enter gasoline (in litres): ");
+        double gasoline = scan1.nextInt();
+        double consumedFuel = (gasoline / fuelConsumption);
+        return (int) consumedFuel;
     }
 
     Scanner scan = new Scanner(System.in);
 
-    {
+    public int calculateAmountKmWithMaxSpeed() {
         System.out.print("Enter time (in hours): ");
-        double time = scan.nextInt();
-        double amountKm = (time * MaximumSpeed);
-
-
-        Scanner scan1 = new Scanner(System.in);
-
-
-        System.out.print("Enter gasoline (in litres): ");
-        double gasoline = scan1.nextInt();
-        double ConsumedFuel = (gasoline / FuelConsumption);
-        System.out.println("За время" + time + "ч." + "Двигаясь с максимальной скоростью" + MaximumSpeed + "км/ч" +
-                "проедет" + amountKm + "км и израсходует" + ConsumedFuel + "литров топлива.");
+        int time = scan.nextInt();
+        return (int) (time * maximumSpeed);
     }
 }
+
 
 
 

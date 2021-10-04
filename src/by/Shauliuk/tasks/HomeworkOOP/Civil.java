@@ -4,64 +4,73 @@ import java.util.Scanner;
 
 public class Civil extends Air {
 
-    private int NumberOfPassengers2;
-    private boolean BusinessClassAvailability;
+    protected int numberOfPassengers2;
+    protected boolean businessClassAvailability;
 
 
-    public Civil(int power, double maximumSpeed, int weight, String brand,
-                 int wingspan, int minimumRunwayLengthForTakeOff, int numberOfPassengers2, boolean businessClassAvailability) {
+    public Civil(int power, double maximumSpeed, int weight, String brand, int wingspan, int minimumRunwayLengthForTakeOff
+            , int numberOfPassengers2, boolean businessClassAvailability) {
         super(power, maximumSpeed, weight, brand, wingspan, minimumRunwayLengthForTakeOff);
+        this.numberOfPassengers2 = numberOfPassengers2;
+        this.businessClassAvailability = businessClassAvailability;
     }
 
-    public void Transport(int power, double maximumSpeed, int weight, String brand) {
-        this.Power = 700;
-        this.MaximumSpeed = 3000;
-        this.Weight = 5000;
-        this.Brand = "Boing";
-        this.Wingspan = 900;
-        this.MinimumRunwayLengthForTakeOff = 642;
+    public String displayInfo3() {
+        System.out.println(" 3) Passenger airplane with the following characteristics: " + power + " in horse power, " +
+                maximumSpeed + " km/hour maximum Speed, " + weight + " kg weight, " + brand + " brand, "
+                + wingspan + " m Wingspan " + minimumRunwayLengthForTakeOff + " Minimum runway length for take-off ");
+        return null;
+    }
 
-        System.out.println("Passenger airplane with the following characteristics:" + power + "in horse power" +
-                maximumSpeed + " km/hour maximum Speed" + weight + " kg weight " + brand + "brand"
-                + Wingspan + "m Wingspan" + MinimumRunwayLengthForTakeOff + "Minimum runway length for take-off");
 
-        double calculatePowerInKilowatts;
-
+    double calculateKilowatts() {
         double kilowatts = power * 0.74;
-        System.out.println("Power in kilowatts " + kilowatts);
+        return kilowatts;
     }
 
     public int getNumberOfPassengers2() {
-        return NumberOfPassengers2;
+        return numberOfPassengers2;
     }
 
-    public void setNumberOfPassengers2(int CarryingCapacity) {
-        this.NumberOfPassengers2 = 250;
+    public void setNumberOfPassengers2(int numberOfPassengers2) {
+        this.numberOfPassengers2 = 250;
+    }
+
+    public String numberOfPassengers2() {
+        System.out.println("Number of passengers " + numberOfPassengers2);
+        return null;
     }
 
     Scanner scan2 = new Scanner(System.in);
 
-    {
+    public int passengersPlane() {
         System.out.println("Enter passengers amount: ");
         int passengers = scan2.nextInt();
-        if (passengers > NumberOfPassengers2)
+        if (passengers > numberOfPassengers2)
             System.out.println("You need a bigger plane");
         else {
             System.out.println("Plane is filled with people");
         }
 
+        return passengers;
     }
 
     public boolean getBusinessClassAvailability() {
-        return BusinessClassAvailability;
+        return businessClassAvailability;
     }
 
     public void setBusinessClassAvailability(boolean BusinessClassAvailability) {
-        for (int i = 0; i < 4; i++) {
-            System.out.println("Business class availability" + BusinessClassAvailability);
-        }
-
-        System.out.println("Number of passengers " + NumberOfPassengers2);
+        this.businessClassAvailability = true;
     }
 
+    public String BusinessClass() {
+        if (businessClassAvailability == true)
+            System.out.println("There is a business class availability");
+        else {
+            System.out.println("There is no a business class availability");
+        }
+        return null;
+    }
 }
+
+
